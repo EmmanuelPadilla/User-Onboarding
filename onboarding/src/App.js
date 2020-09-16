@@ -33,7 +33,7 @@ export default function App() {
     axios
       .get("https://reqres.in/api/users")
       .then((res) => {
-        setUsers(res.data);
+        setUsers(res.data.data);
       })
       .catch((err) => {
         console.log(err, "i messed up");
@@ -42,8 +42,10 @@ export default function App() {
 
   const postNewuser = (newUser) => {
     axios
-      .post("https://regres.in/api/users", newUser)
+      .post("https://reqres.in/api/users", newUser)
       .then((res) => {
+        console.log(res.data);
+        console.log(users);
         setUsers([...users, res.data]);
         setFormValues(initialFormValues);
       })
@@ -90,10 +92,11 @@ export default function App() {
   };
 
   const inputChange = (name, value) => {
-    validate(value);
+    console.log(name, value);
+    validate(name, value);
     setFormValues({
       ...formValues,
-      [name]: "",
+      [name]: value,
     });
   };
 
@@ -121,10 +124,6 @@ export default function App() {
     <div className="container">
       <header>
         <h1>Acme INC Employee Login</h1>
-
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
       </header>
       <AdvancedForm
         values={formValues}
@@ -133,6 +132,9 @@ export default function App() {
         disabled={disabled}
         errors={formErrors}
       />
+      {users.map((user) => {
+        return <User key={users.id} details={user} />;
+      })}
     </div>
   );
 }

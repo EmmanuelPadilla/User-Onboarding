@@ -15,7 +15,7 @@ export default function AdvancedForm(props) {
   };
 
   return (
-    <form className="formContainer" on Submit={onSubmit}>
+    <form className="formContainer" onSubmit={onSubmit}>
       <div className="formsubmit">
         <h2>Add New User</h2>
         <button disabled={disabled}>SUBMIT</button>
@@ -28,56 +28,59 @@ export default function AdvancedForm(props) {
         </div>
       </div>
 
-        <div className='formImputs'>
-            <h4>Please Enter your Information</h4>
+      <div className="formImputs">
+        <label>
+          {" "}
+          First Name
+          <input
+            value={values.first_name}
+            onChange={onChange}
+            name="first_name"
+            type="text"
+          />
+        </label>
 
-            <label> First Name
+        <label>
+          {" "}
+          Last Name
+          <input
+            value={values.last_name}
+            onChange={onChange}
+            name="last_name"
+            type="text"
+          />
+        </label>
 
-                <input
-                value={values.first_name}
-                onChange={onChange}
-                name='name'
-                type='text'
-                />
-            </label>
-
-            <label> Last Name
-                <input
-                value={values.first_name}
-                onChange={onChange}
-                name='name'
-                type='text'
-                />
-            </label>
-
-            <label>Email
+        <label>
+          Email
           <input
             value={values.email}
             onChange={onChange}
-            name='email'
-            type='text'
+            name="email"
+            type="text"
           />
         </label>
 
-        <label>Password
+        <label>
+          Password
           <input
             value={values.password}
             onChange={onChange}
-            name='password'
-            type='password'
+            name="password"
+            type="password"
           />
         </label>
 
-        <label> TOS
-
-                <input
-                value={values.tos}
-                onChange={onChange}
-                name='tos'
-                type='checkbox'
-                />
-            </label>
-        </div>
+        <label>
+          I Agree to the terms of service.
+          <input
+            value={values.tos}
+            onChange={onChange}
+            name="tos"
+            type="checkbox"
+          />
+        </label>
+      </div>
     </form>
   );
 }

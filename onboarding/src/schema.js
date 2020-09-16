@@ -13,6 +13,7 @@ export default yup.object().shape({
     .string()
     .email("Must be a valid email address, dont make it up")
     .required("Email is required"),
+  password: yup.string().required("need password").min(8, "minimum 8 char"),
   tos: yup
     .boolean()
     .oneOf(
