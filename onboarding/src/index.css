@@ -17,7 +17,7 @@ code {
 }
 
 body {
-  background-color: rgb(244, 244, 244);
+  background: linear-gradient(#141e30, #243b55);
   color: rgb(65, 75, 60);
   font-family: 'Bitter', serif;
 }
@@ -26,9 +26,21 @@ body {
   border: 1px solid rgb(210, 210, 210);
   border-radius: 6px;
   box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
+  margin: 0 auto;
+  padding: 16px;
+  background-color: gray;
+
+  width: 60%;
+}
+
+.userContainer {
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px -2px rgb(128, 127, 127);
   margin: 16px 8px;
   padding: 16px;
   background-color: white;
+  color: blue;
 }
 
 .formContainer {
@@ -38,26 +50,28 @@ body {
   @media (max-width: 650px) {
     flex-direction: column;
   }
-
-  .formImputs {
-    padding: 0 24px 0 24px;
-    display: flex;
-    flex-direction: column;
-
-    &.submit {
-      flex: 2;
-      align-items: flex-start;
-    }
-
-    &.inputs {
-      flex: 2;
-    }
-
-    &.checkboxes {
-      flex: 1;
-    }
-  }
 }
+
+.formInputs {
+  padding: 0 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+&.submit {
+  flex: 2;
+  align-items: flex-start;
+}
+
+&.inputs {
+  flex: 2;
+}
+
+&.checkboxes {
+  flex: 1;
+}
+
+
 
 a {
   font-size: 0.75em;
@@ -74,7 +88,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: crimson;
+  color: darkblue;
 }
 
 form {
@@ -119,7 +133,7 @@ button {
 
 .errors {
   margin: 8px;
-  font-size: 0.7em;
+  font-size: 1em;
   color: red;
 
   div {

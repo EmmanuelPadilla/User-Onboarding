@@ -18,7 +18,9 @@ export default function AdvancedForm(props) {
     <form className="formContainer" onSubmit={onSubmit}>
       <div className="formsubmit">
         <h2>Add New User</h2>
-        <button disabled={disabled}>SUBMIT</button>
+        <button id="button" disabled={disabled}>
+          SUBMIT
+        </button>
         <div className="errors">
           <div>{errors.first_name}</div>
           <div>{errors.last_name}</div>
@@ -28,7 +30,7 @@ export default function AdvancedForm(props) {
         </div>
       </div>
 
-      <div className="formImputs">
+      <div className="formInputs">
         <label>
           {" "}
           First Name
